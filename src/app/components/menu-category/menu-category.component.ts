@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { tick } from '@angular/core/testing';
 import { Category } from 'src/app/models/category';
 import { CategoryService } from '../../services/category.service';
 
@@ -9,18 +8,13 @@ import { CategoryService } from '../../services/category.service';
   styleUrls: ['./menu-category.component.css'],
 })
 export class MenuCategoryComponent implements OnInit {
+  categories: Category[] = [];
 
-  categories:Category[]=[];
-
-  constructor(private categoryService:CategoryService) {}
+  constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
-this.categoryService.getCategories().subscribe(data=>{
-
-  this.categories=data;
-
-})
-
-
+    this.categoryService.getCategories().subscribe((data) => {
+      this.categories = data;
+    });
   }
 }

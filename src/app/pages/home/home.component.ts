@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   page: number = 1;
   articles: Article[];
   totalCount: number;
-  pageSize: number;
+  pageSize: number = 5;
 
   constructor(
     private articleService: ArticleService,

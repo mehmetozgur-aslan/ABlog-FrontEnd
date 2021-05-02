@@ -15,6 +15,8 @@ export class ArticleService {
   getArticles(page: number, pageSize: number) {
     let api = `${this.apiUrl}/${page}/${pageSize}`;
 
+    console.log(api);
+
     return this.httpClient.get<ArticlePg>(api).pipe(
       tap((x) => {
         this.loading = false;
