@@ -21,7 +21,9 @@ export class ArticlesComponent implements OnInit {
     private articleService: ArticleService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.articleService.loading = true;
+  }
 
   pageChanged(event) {
     this.articleService.loading = true;
