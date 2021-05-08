@@ -14,6 +14,7 @@ export class ArticlesComponent implements OnInit {
   @Input() page: number;
   @Input() pageSize: number;
   @Input() loadingItem: number;
+  @Input() typeList: string;
   default_article: string = 'assets/article_empty.jpg';
   constructor(
     private router: Router,
@@ -28,7 +29,24 @@ export class ArticlesComponent implements OnInit {
   pageChanged(event) {
     this.articleService.loading = true;
     this.page = event;
-    this.router.navigateByUrl(`/sayfa/${this.page}`);
+
+    switch (this.typeList) {
+      case 'home':
+        this.router.navigateByUrl(`/sayfa/${this.page}`);
+        break;
+      case 'category':
+        let categoryName = this.route.snapshot.paramMap.get('name');
+        let categoryId = this.route.snapshot.paramMap.get('id');
+
+        this.router.navigateByUrl(
+          `/kategori/${categoryName}/${categoryId}/sayfa/${this.page}`
+        );
+
+        break;
+
+      default:
+        break;
+    }
   }
 
   createRange(number) {

@@ -29,6 +29,26 @@ export class ArticleService {
       tap((x) => {
         this.loading = false;
       })
-    );  
+    );
+  }
+
+  getArticlesWithCategory(categoryId: number, page: number, pageSize: number) {
+    let api = `${this.apiUrl}/GetArticlesWithCategory/${categoryId}/${page}/${pageSize}`;
+
+    return this.httpClient.get<ArticlePg>(api).pipe(
+      tap((x) => {
+        this.loading = false;
+      })
+    );
+  }
+
+  getSearchArticles(searchText: string, page: number, pageSize: number) {
+    let api = `${this.apiUrl}/SearchArticles/${searchText}/${page}/${pageSize}`;
+
+    return this.httpClient.get<ArticlePg>(api).pipe(
+      tap((x) => {
+        this.loading = false;
+      })
+    );
   }
 }
