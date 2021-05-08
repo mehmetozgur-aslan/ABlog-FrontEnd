@@ -1,5 +1,5 @@
-<div class="card bg-light" style="height: 500px;" *ngIf="articleService.loading">
-
+<!-- <div class="card bg-light" style="height: 500px;" *ngIf="articleService.loading"> -->
+  <div class="card bg-light" style="height: 500px;">
   <div class="card-body text-center">
 <h3>Makale yükleniyor...</h3>
     <div class="spinner-border text-primary" role="status">
@@ -31,7 +31,8 @@
 
 </div>
 
-<div class="card border-primary" *ngIf="!articleService.loading">
+<!-- <div class="card border-primary" *ngIf="!articleService.loading"> -->
+<div class="card border-primary">
   <div class="card-header">
     <h3>{{ article.title }}</h3>
 

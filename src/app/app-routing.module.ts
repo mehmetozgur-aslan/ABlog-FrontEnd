@@ -7,6 +7,7 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { ArticleComponent } from './pages/article/article.component';
 import { CategoryArticlesComponent } from './pages/category-articles/category-articles.component';
+import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,11 @@ const routes: Routes = [
       {
         path: 'kategori/:name/:id/sayfa/:page',
         component: CategoryArticlesComponent,
+      },
+
+      {
+        path: 'arama/sayfa/:page',
+        component: SearchComponent,
       },
 
       {

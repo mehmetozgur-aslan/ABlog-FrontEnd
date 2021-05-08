@@ -43,13 +43,18 @@ export class ArticlesComponent implements OnInit {
         );
 
         break;
+      case 'search':
+        let searchText = this.route.snapshot.queryParamMap.get('s');
+        this.router.navigateByUrl(`/arama/sayfa/${this.page}?s=${searchText}`);
+
+        break;
 
       default:
         break;
     }
   }
 
-  createRange(number) {
+  public createRange() {
     var items: number[] = [];
     for (var i = 1; i <= this.loadingItem; i++) {
       items.push(i);
