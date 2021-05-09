@@ -49,6 +49,16 @@ export class ArticlesComponent implements OnInit {
 
         break;
 
+      case 'archive':
+        let year = this.route.snapshot.paramMap.get('year');
+        let month = this.route.snapshot.paramMap.get('month');
+
+        this.router.navigateByUrl(
+          `/arsiv/${year}?s=${month}/sayfa/${this.page}`
+        );
+
+        break;
+
       default:
         break;
     }

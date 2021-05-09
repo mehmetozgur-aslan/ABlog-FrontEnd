@@ -8,6 +8,7 @@ import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.compone
 import { ArticleComponent } from './pages/article/article.component';
 import { CategoryArticlesComponent } from './pages/category-articles/category-articles.component';
 import { SearchComponent } from './pages/search/search.component';
+import { ArchiveComponent } from './pages/archive/archive.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,15 @@ const routes: Routes = [
         path: 'arama/sayfa/:page',
         component: SearchComponent,
       },
+      {
+        path:"arsiv/:year/:month",
+        component:ArchiveComponent
+      },
+      {
+        path:"arsiv/:year/:month/sayfa/:page",
+        component:ArchiveComponent
+      },
+
 
       {
         //wwww.bıdıbıdı.com/hakkimizda
