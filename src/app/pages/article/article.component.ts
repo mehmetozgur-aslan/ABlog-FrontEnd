@@ -12,25 +12,26 @@ import { ArticleService } from 'src/app/services/article.service';
 export class ArticleComponent implements OnInit {
   article: Article;
   category: Category;
-
+  pageLoad: boolean = false;
   constructor(
     private articleService: ArticleService,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    this.pageLoad = true;
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.articleService.loading = true;
+      this.pageLoad = this.articleService.loading;
       let id = Number(this.route.snapshot.paramMap.get('id'));
 
       this.articleService.getArticle(id).subscribe((data) => {
         this.article = data;
         this.category = data.category;
-        this.articleService.articleViewCountUp(id);   
+        this.articleService.articleViewCountUp(id);
+        this.pageLoad = this.articleService.loading;
       });
     });
-
-
-
   }
 }

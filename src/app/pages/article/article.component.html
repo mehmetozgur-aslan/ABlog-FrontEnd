@@ -1,37 +1,37 @@
-<!-- <div class="card bg-light" style="height: 500px;" *ngIf="articleService.loading"> -->
-  <div class="card bg-light" style="height: 500px;">
+<div class="card bg-light" style="height: 500px;" *ngIf="pageLoad">
+
   <div class="card-body text-center">
 <h3>Makale yükleniyor...</h3>
     <div class="spinner-border text-primary" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-border text-secondary" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-border text-success" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-border text-danger" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-border text-warning" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-border text-info" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-border text-light" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
     <div class="spinner-border text-dark" role="status">
-      <span class="visually-hidden">Loading...</span>
+      <span class="visually-hidden"></span>
     </div>
 
   </div>
 
 </div>
 
-<!-- <div class="card border-primary" *ngIf="!articleService.loading"> -->
+ <div class="card border-primary" *ngIf="!pageLoad">
 <div class="card border-primary">
   <div class="card-header">
     <h3>{{ article.title }}</h3>

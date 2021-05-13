@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.url.subscribe((params) => {
-      if ((this.ajax = !null)) this.ajax.unsubscribe();
+      if (this.ajax != null) this.ajax.unsubscribe();
 
       this.articles = [];
       this.totalCount = 0;

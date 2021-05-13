@@ -37,7 +37,7 @@ export class MainNavComponent implements OnInit {
     if (searchText == '' || searchText == null || searchText == undefined) {
       return false;
     } else {
-      this.router.navigateByUrl(`/arama/sayfa/1/s=${searchText}`);
+      this.router.navigateByUrl(`/arama/sayfa/1?s=${searchText}`);
     }
   }
 }

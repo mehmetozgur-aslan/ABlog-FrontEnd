@@ -45,6 +45,9 @@ export class ArticleService {
 
   getSearchArticles(searchText: string, page: number, pageSize: number) {
     let api = `${this.apiUrl}/SearchArticles/${searchText}/${page}/${pageSize}`;
+    console.log(searchText);
+    console.log(page);
+    console.log(pageSize);
 
     return this.httpClient.get<ArticlePg>(api).pipe(
       tap((x) => {
