@@ -14,6 +14,7 @@ import { AdminArticleComponent } from './admin-pages/article/admin-article/admin
 import { ArticleAddComponent } from './admin-pages/article/article-add/article-add.component';
 import { ArticleUpdateComponent } from './admin-pages/article/article-update/article-update.component';
 import { ArticleListComponent } from './admin-pages/article/article-list/article-list.component';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
         //wwww.bıdıbıdı.com/iletisim
         path: 'iletisim',
         component: ContactComponent,
+      },
+      {
+        path: 'adminlogin',
+        component: AdminLoginComponent,
       },
     ],
   },
